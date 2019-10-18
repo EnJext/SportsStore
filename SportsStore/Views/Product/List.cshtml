@@ -1,0 +1,11 @@
+﻿@model ProductsListViewModel
+
+@foreach (var p in Model.Products)
+{
+    <partial name="ProductSummary" model="p"/>
+}
+
+<div page-model="@Model.PagingInfo" page-action="List" class="btn-group" role="group"
+     page-classes-enebled="true" page-class-normal ="btn-secondary"
+     page-class-selected="btn-primary">
+</div>
