@@ -10,13 +10,13 @@
 </head>
 <body>
     <div class="navbar navbar-dark bg-dark fixed-top" role="navigation" >
-        <a class="navbar-brand" href="#">SPORTS STORE</a>
+        <a class="navbar-brand" href="/">SPORTS STORE</a>
     </div>
     <div class="row " style="margin-top: 75px;">
-        <div id="categories" class="col-3">
-            Some things will be here 
+        <div id="categories" class="col-md-3" style="padding-left:20px; padding-right:20px;">
+            @await Component.InvokeAsync("NavigationMenu")
         </div>
-        <div class="col-9">
+        <div class="col-md-9" style="padding-right:25px; padding-left:25px;">
             @RenderBody()
         </div>
     </div>
