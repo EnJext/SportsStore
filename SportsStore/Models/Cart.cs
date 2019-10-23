@@ -28,7 +28,7 @@ namespace SportsStore.Models
 
         }
         public virtual bool RemoveLine(Product product) => 
-            CartLineCollection.Remove(CartLineCollection.Where(p=>p.Product==product).FirstOrDefault());
+            CartLineCollection.Remove(CartLineCollection.Where(p=>p.Product.ProductID ==product.ProductID).FirstOrDefault());
         public virtual void Clear() => CartLineCollection.Clear();
         public virtual IEnumerable<CartLine> Lines => CartLineCollection;
 
@@ -37,8 +37,10 @@ namespace SportsStore.Models
 
     public class CartLine
     {
-        public int CardLineID { get; set; } // 
+        public int CardLineID { get; set; } 
         public Product Product { get; set; }
         public int Quantity { get; set; }
+
+        
     }
 }

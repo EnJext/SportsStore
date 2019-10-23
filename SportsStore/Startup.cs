@@ -22,7 +22,12 @@ namespace SportsStore
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration["Data:SportsStoreProducts:ConnectionString"]));
             // Transient указывет что каждый раз будет создаватся новый обьект  
+
             services.AddTransient<IProductRepository, EFProductRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            // scoped - новый екземпляр для каждого отдельного запроса 
+            services.AddScoped<Cart>(sr => SessionCart.GetCart(sr));
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();

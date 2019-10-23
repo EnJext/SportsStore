@@ -18,6 +18,16 @@
                 <td class="text-left">@line.Product.Name</td>
                 <td class="text-right">@line.Product.Price.ToString("c")</td>
                 <td class="text-right">@((line.Product.Price * line.Quantity).ToString("c"))</td>
+                <td class="text-center">
+                    <form method="post">
+                        <input type="hidden" name ="ProductID" id="ProductID" value="@line.Product.ProductID">
+                        <input type="hidden" asp-for="@Model.ReturnUrl">
+                        <button class=" btn btn-success btn-sm btn-danger" type="submit"
+                                 asp-action="RemoveFromCart">
+                            Remove 
+                        </button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
