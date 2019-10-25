@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace SportsStore.Tests
 {
-    public class CartTests
+    public class CartControllerTests
     {
         [Fact]
         public void CanAddItems()

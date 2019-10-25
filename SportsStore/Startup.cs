@@ -28,6 +28,9 @@ namespace SportsStore
 
             // scoped - новый екземпляр для каждого отдельного запроса 
             services.AddScoped<Cart>(sr => SessionCart.GetCart(sr));
+
+            services.AddTransient<IOrderRepository, EFOrderRepository>();
+
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();

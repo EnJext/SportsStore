@@ -37,7 +37,7 @@ namespace SportsStore.Models
 
     public class CartLine
     {
-        public int CardLineID { get; set; } 
+        public int CartLineID { get; set; } 
         public Product Product { get; set; }
         public int Quantity { get; set; }
 
