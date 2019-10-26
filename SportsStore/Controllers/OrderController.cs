@@ -48,6 +48,19 @@ namespace SportsStore.Controllers
             return View();
         }
 
+        public ViewResult List() => View(repository.Orders.Where(order=>!order.Shipped).OrderBy(order => order.OrderID));
+
+        public IActionResult MarkShipped(int OrderID)
+        {
+            Order order = repository.Orders.Where(or => or.OrderID == OrderID).FirstOrDefault();
+            if(order != null)
+            {
+                order.Shipped = true;
+                repository.SaveOrder(order);
+            }
+            return RedirectToAction(nameof(List));
+        }
+
 
     }
 }
