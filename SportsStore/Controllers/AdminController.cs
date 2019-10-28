@@ -4,15 +4,16 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SportsStore.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SportsStore.Controllers
 {
+    [Authorize]
     public class AdminController: Controller
     {
         private IProductRepository products;
-
         public AdminController(IProductRepository repo) => products = repo;
-
+        
         public ViewResult Index() => View(products.Products);
 
         public ViewResult Edit(int ProductID) => View(products.Products.FirstOrDefault(p => p.ProductID == ProductID));

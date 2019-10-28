@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SportsStore.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SportsStore.Controllers
 {
@@ -48,8 +49,10 @@ namespace SportsStore.Controllers
             return View();
         }
 
+        [Authorize]
         public ViewResult List() => View(repository.Orders.Where(order=>!order.Shipped).OrderBy(order => order.OrderID));
 
+        [Authorize]
         public IActionResult MarkShipped(int OrderID)
         {
             Order order = repository.Orders.Where(or => or.OrderID == OrderID).FirstOrDefault();
