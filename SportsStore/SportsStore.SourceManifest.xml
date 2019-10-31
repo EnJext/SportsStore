@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="C:\Users\Valik\source\repos\SportsStore1\SportsStore\obj\Release\netcoreapp2.2\PubTmp\Out\" />
-  <dbfullsql path="C:\Users\Valik\source\repos\SportsStore1\SportsStore\obj\Release\netcoreapp2.2\PubTmp\EFSQLScripts\SportsStore.Models.ApplicationDbContext.sql" />
-</sitemanifest>
