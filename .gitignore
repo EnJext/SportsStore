@@ -662,3 +662,7 @@ $RECYCLE.BIN/
 
 **/wwwroot/lib/
 **/.vscode/
+**/appsettings.Development.json
+**/SportsStore.zip
+
+

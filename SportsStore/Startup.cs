@@ -21,7 +21,7 @@ namespace SportsStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>
-                (options => options.UseSqlServer(Configuration["Data:SportsStoreProducts:ConnectionString"]));
+                (options => options.UseSqlServer(Configuration["Data:SportsStoreRemoteDatabase:ConnectionString"]));
 
             // удалил подключение AppIdentityDbContext
 
@@ -92,8 +92,8 @@ namespace SportsStore
                     template: "{controller}/{action}/{id?}"
                     );
             });
-            SeedData.EnsurePopulated(app);
-            IdentitySeedData.EnsurePopulated(app);
+            //SeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

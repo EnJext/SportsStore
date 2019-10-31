@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="vallik-001-site1" />
+  <setParameter name="SportsStore.Models.ApplicationDbContext" value="Data Source=SQL6007.site4now.net;Initial Catalog=DB_A4F846_Vallik;User Id=DB_A4F846_Vallik_admin;Password=jugo1234;" />
+</parameters>
