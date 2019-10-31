@@ -21,13 +21,12 @@ namespace SportsStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>
-                (options => options.UseSqlServer(Configuration["Data:SportsStoreProducts:ConnectionString"]));
+                (options => options.UseSqlServer(Configuration["Data:SportsStoreRemoteDatabase:ConnectionString"]));
 
-            services.AddDbContext<AppIdentityDbContext>
-                (options => options.UseSqlServer(Configuration["Data:SportsStoreIdentity:ConnectionString"]));
+            // удалил подключение AppIdentityDbContext
 
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppIdentityDbContext>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
 
@@ -53,6 +52,11 @@ namespace SportsStore
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseStatusCodePages();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
             }
             app.UseBrowserLink();
             app.UseStatusCodePages();
@@ -88,8 +92,8 @@ namespace SportsStore
                     template: "{controller}/{action}/{id?}"
                     );
             });
-            SeedData.EnsurePopulated(app);
-            IdentitySeedData.EnsurePopulated(app);
+            //SeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

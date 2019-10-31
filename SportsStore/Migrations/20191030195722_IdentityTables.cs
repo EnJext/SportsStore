@@ -2,12 +2,33 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SportsStore.Migrations.AppIdentityDb
+namespace SportsStore.Migrations
 {
-    public partial class initial : Migration
+    public partial class IdentityTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterColumn<string>(
+                name: "Name",
+                table: "Products",
+                nullable: false,
+                oldClrType: typeof(string),
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Description",
+                table: "Products",
+                nullable: false,
+                oldClrType: typeof(string),
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Category",
+                table: "Products",
+                nullable: false,
+                oldClrType: typeof(string),
+                oldNullable: true);
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -215,6 +236,24 @@ namespace SportsStore.Migrations.AppIdentityDb
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Name",
+                table: "Products",
+                nullable: true,
+                oldClrType: typeof(string));
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Description",
+                table: "Products",
+                nullable: true,
+                oldClrType: typeof(string));
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Category",
+                table: "Products",
+                nullable: true,
+                oldClrType: typeof(string));
         }
     }
 }

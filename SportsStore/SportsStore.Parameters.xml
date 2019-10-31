@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="vallik-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Valik\\source\\repos\\SportsStore1\\SportsStore\\obj\\Release\\netcoreapp2\.2\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="SportsStore.Models.ApplicationDbContext" description="" value="Data Source=SQL6007.site4now.net;Initial Catalog=DB_A4F846_Vallik;User Id=DB_A4F846_Vallik_admin;Password=jugo1234;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Valik\\source\\repos\\SportsStore1\\SportsStore\\obj\\Release\\netcoreapp2\.2\\PubTmp\\EFSQLScripts\\SportsStore\.Models\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>
