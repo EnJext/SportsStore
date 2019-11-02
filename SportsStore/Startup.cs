@@ -53,12 +53,12 @@ namespace SportsStore
             {
                 app.UseDeveloperExceptionPage();
                 app.UseStatusCodePages();
+                app.UseBrowserLink();
             }
             else
             {
                 app.UseExceptionHandler("/Error");
             }
-            app.UseBrowserLink();
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
